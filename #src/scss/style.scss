@@ -1,0 +1,42 @@
+@import "./fonts.scss";
+@import "base/style";
+@import "components/style";
+@import "sections/style";
+
+.sales-page {
+   &__item {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      border: 1px solid $blackQuart;
+      min-height: 367px;
+   }
+
+   &__image {
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__text {
+      padding: 24px 16px;
+      color: $blackPrimary;
+      font-size: 24px;
+      line-height: 110%;
+      /* 26.4px */
+   }
+   @media (max-width: $mobile) {
+      &__item {
+         min-height: 324px;
+      }
+
+      &__text {
+         padding-right: 24px;
+      }
+   }
+}

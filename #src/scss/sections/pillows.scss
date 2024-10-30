@@ -1,0 +1,227 @@
+.pillows {
+   padding-top: var(--padding);
+   // .pillows__wrapper
+
+   &__wrapper {
+      padding: 90px 70px;
+      background-color: $brandBlue;
+      border-radius: 8px;
+      position: relative;
+   }
+   &__main {
+      max-width: 830px;
+   }
+   // .pillows__span
+
+   &__span {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: calc(46 / 40);
+      color: #000000a6;
+   }
+
+   // .pillows__title
+
+   &__title {
+      font-family: Soyuz Grotesk;
+      font-size: 65px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: black;
+      margin-top: 28px;
+      margin-bottom: 68px;
+      position: relative;
+      z-index: 1;
+      span {
+         color: white;
+      }
+      & > img {
+         height: 140px;
+         width: 249px;
+         position: absolute;
+         bottom: -50px;
+         right: 35px;
+         @media (max-width: $tablet) {
+            height: 107px;
+            width: 220px;
+         }
+         @media (max-width: $mobile) {
+            bottom: -80px;
+            width: 189px;
+            height: 90px;
+         }
+      }
+   }
+
+   // .pillows__image
+
+   &__image {
+      z-index: 0;
+      position: absolute;
+      top: 100px;
+      right: 70px;
+      @media (max-width: 1440px) {
+         top: calc(250px - 150 * ((100vw - 1024px) / (1440 - 1024)));
+         right: calc(0px + 70 * ((100vw - 1024px) / (1440 - 1024)));
+         img {
+            width: calc(350px + 200 * ((100vw - 1024px) / (1440 - 1024)));
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      &__wrapper {
+         padding: 50px 40px;
+      }
+      &__span {
+         font-size: 32px;
+      }
+      &__main {
+         max-width: unset;
+      }
+      &__title {
+         h2 {
+            font-size: 52px;
+         }
+      }
+      &__image {
+         margin-bottom: 40px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         top: unset;
+         right: unset;
+         img {
+            width: unset;
+            max-width: 100%;
+            object-fit: contain;
+         }
+      }
+   }
+   @media (max-width: $mobile) {
+      &__wrapper {
+         margin-left: -12px;
+         margin-right: -12px;
+         padding: 32px 12px;
+         width: 100vw;
+      }
+      &__span {
+         font-size: 20px;
+      }
+      &__title {
+         margin-top: 20px;
+         margin-bottom: 74px;
+         h2 {
+            font-size: 44px;
+         }
+      }
+      &__image {
+         margin-bottom: 32px;
+      }
+   }
+}
+.pillows-form {
+   max-width: 530px;
+   // .pillows-form__title
+
+   &__title {
+      color: #000000a6;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: calc(26 / 20);
+   }
+
+   // .pillows-form__radios
+
+   &__radios {
+      margin: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      input {
+         display: none;
+      }
+      label {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         height: 50px;
+         font-size: 20px;
+         font-weight: 500;
+         line-height: calc(26 / 20);
+         text-align: center;
+         gap: 10px;
+         color: #000000d9;
+         border: 1px solid #000000a6;
+         border-radius: 32px;
+         transition: 0.4s;
+         cursor: pointer;
+      }
+      input:checked + label {
+         border-color: black;
+      }
+   }
+
+   // .pillows-form__inputs
+
+   &__inputs {
+      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      .input {
+         background-color: $white;
+      }
+   }
+
+   // .pillows-form__footer
+
+   &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+         font-size: 14px;
+         font-weight: 500;
+         line-height: calc(19.6 / 14);
+         text-align: left;
+         color: $blackTert;
+         a {
+            color: $blackSecondary;
+            border-bottom: 1px solid $blackSecondary;
+         }
+      }
+   }
+   &__btn {
+      background-color: $black;
+      color: $white;
+   }
+   @media (max-width: $tablet) {
+      max-width: unset;
+   }
+   @media (max-width: $mobile) {
+      &__title {
+         font-size: 16px;
+      }
+      &__radios {
+         margin-bottom: 8px;
+         label {
+            height: 44px;
+            font-size: 16px;
+         }
+      }
+      &__inputs {
+         grid-template-columns: 1fr;
+         gap: 8px;
+         margin-bottom: 12px;
+      }
+      &__footer {
+         gap: 12px;
+         p {
+            font-size: 14px;
+         }
+      }
+   }
+}

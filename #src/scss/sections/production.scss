@@ -1,0 +1,131 @@
+.production {
+   padding-top: 120px;
+   // .production__wrapper
+
+   &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+   }
+
+   // .production__main
+
+   &__main {
+      flex: 0 0 486px;
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .production__header
+
+   &__header {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+   }
+
+   // .production__title
+
+   &__title {
+      font-size: 50px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: $blackPrimary;
+   }
+
+   // .production__text
+
+   &__text {
+      font-size: 20px;
+      line-height: calc(26 / 20);
+
+      color: $blackSecondary;
+   }
+
+   // .production__footer
+
+   &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      &.mobile {
+         display: none;
+      }
+   }
+
+   // .production__link
+
+   &__link {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      color: $blackPrimary;
+      a {
+         display: block;
+         color: #a25ae6;
+      }
+   }
+
+   // .production__btn
+
+   &__btn {
+      border: none !important;
+      background-color: $brownPrimary;
+      color: $white;
+   }
+
+   // .production__video
+
+   &__video {
+      max-width: 688px;
+      flex: 0 1 688px;
+      height: 522px;
+      video {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+   @media (max-width: $tablet) {
+      padding-top: 96px;
+      &__wrapper {
+         flex-direction: column;
+      }
+      &__main {
+         flex: unset;
+      }
+      &__footer {
+         display: none;
+         &.mobile {
+            display: flex !important;
+         }
+      }
+      &__title {
+         font-size: 44px;
+      }
+      &__text {
+         font-size: 18px;
+      }
+      &__video {
+         flex: unset;
+         max-width: unset;
+         height: 417px;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding-top: 64px;
+      &__title {
+         font-size: 32px;
+      }
+      &__text {
+         font-size: 16px;
+      }
+      &__video {
+         height: 208px;
+      }
+      &__footer {
+         gap: 24px;
+      }
+   }
+}

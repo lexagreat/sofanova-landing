@@ -1,0 +1,117 @@
+.eco {
+   padding-top: 120px;
+   padding-bottom: 40px;
+   // .eco__wrapper
+
+   &__wrapper {
+      display: flex;
+      gap: 26px;
+      background-color: #f2ffee;
+      padding: 36px 90px;
+      border-radius: 8px;
+   }
+
+   // .eco__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      // flex: 0 0 475px;
+   }
+
+   // .eco__title
+
+   &__title {
+      font-size: 65px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+   }
+
+   // .eco__subtitle
+
+   &__subtitle {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: calc(28.8 / 24);
+      letter-spacing: 0.02em;
+      span {
+         font-size: 40px;
+      }
+   }
+
+   // .eco__text
+
+   &__text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28.8px;
+      letter-spacing: 0.02em;
+   }
+
+   // .eco__image
+
+   &__image {
+      // flex: 1;
+      flex: 0 0 410px;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+   @media (max-width: $tablet) {
+      padding-top: 96px;
+      padding-bottom: 16px;
+      &__wrapper {
+         gap: 0;
+         padding: 20px 0;
+         padding-right: 0;
+         padding-left: 20px;
+      }
+      &__title {
+         font-size: 40px;
+      }
+      &__subtitle {
+         font-size: 18px;
+         span {
+            font-size: 28px;
+         }
+      }
+      &__text {
+         font-size: 18px;
+      }
+      &__image {
+         flex: 0 1 410px;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding-top: 60px;
+      padding-bottom: 12px;
+      &__wrapper {
+         flex-direction: column;
+         gap: 32px;
+         padding: 32px 12px;
+      }
+      &__image {
+         flex: unset;
+      }
+      &__main {
+         gap: 30px;
+      }
+      &__title {
+         font-size: 44px;
+      }
+   }
+}
+.mobile {
+   display: none;
+}
+@media (max-width: $tablet) {
+   .mobile {
+      display: block;
+   }
+   .desktop {
+      display: none;
+   }
+}
