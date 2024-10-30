@@ -1,0 +1,211 @@
+.sale {
+   padding-top: var(--padding);
+   // .sale__wrapper
+
+   &__wrapper {
+      gap: 57px;
+      padding: 70px 90px;
+      position: relative;
+      background-color: #f6e3fa;
+      border-radius: 8px;
+   }
+
+   // .sale__main
+
+   &__main {
+      max-width: 528px;
+      .sale__image {
+         display: none;
+      }
+   }
+
+   // .sale__title
+
+   &__title {
+      font-family: Soyuz Grotesk;
+      font-size: 65px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #000000d9;
+   }
+
+   // .sale__subtitle
+
+   &__subtitle {
+      font-family: Soyuz Grotesk;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #b574ea;
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 30px;
+   }
+
+   // .sale__text
+
+   &__text {
+      font-size: 20px;
+      font-weight: 500;
+      color: #000000a6;
+      margin-bottom: 40px;
+   }
+
+   // .sale__image
+
+   &__image {
+      position: absolute;
+      top: 95px;
+      right: 40px;
+      width: 677px;
+      img {
+         width: 100%;
+      }
+      @media (max-width: 1440px) {
+         width: calc(367px + 110 * ((100vw - 992px) / (1440 - 992)));
+         top: calc(60px + 35 * ((100vw - 992px) / (1440 - 992)));
+      }
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+
+   // .sale__form
+
+   &__form {
+   }
+
+   // .sale__inputs
+
+   &__inputs {
+      display: grid;
+      grid-template-columns: calc(319 / 528 * 100%) 1fr;
+      gap: 16px;
+      .file {
+         input {
+            display: none;
+         }
+         label {
+            white-space: nowrap;
+            height: 49px;
+            border-radius: 32px;
+            background-color: $white;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            color: #00000059;
+         }
+      }
+   }
+
+   // .sale__footer
+
+   &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      p {
+         font-size: 14px;
+         font-weight: 500;
+         line-height: calc(19.6 / 14);
+         color: $blackTert;
+         a {
+            color: $blackSecondary;
+            border-bottom: 1px solid $blackSecondary;
+         }
+      }
+      .btn {
+         background-color: #000000d9;
+         color: $white;
+      }
+   }
+   @media (max-width: $tablet) {
+      &__wrapper {
+         padding: 50px 40px;
+         padding-bottom: 65px;
+      }
+      &__main {
+         max-width: unset;
+         flex: unset;
+         .sale__image {
+            margin-bottom: 40px;
+            width: unset;
+            top: unset;
+            right: unset;
+            display: block;
+            position: relative;
+            max-width: 550px;
+         }
+      }
+      &__title {
+         font-size: 52px;
+      }
+      &__subtitle {
+         font-size: 40px;
+         margin-top: 40px;
+         margin-bottom: 24px;
+      }
+      &__text {
+         font-size: 20px;
+         margin-bottom: 40px;
+      }
+      &__inputs {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 16px;
+         li:nth-child(1) {
+            flex: 0 0 calc(320 / 656 * 100%);
+         }
+         li:nth-child(2) {
+            flex: 0 0 calc(320 / 656 * 100%);
+         }
+         li:nth-child(3) {
+            flex: 0 0 calc(447 / 656 * 100%);
+         }
+         li:nth-child(4) {
+            flex: 0 0 calc(193 / 656 * 100%);
+         }
+      }
+   }
+   @media (max-width: $mobile) {
+      &__wrapper {
+         margin-left: -12px;
+         margin-right: -12px;
+         width: 100vw;
+         padding: 32px 12px;
+      }
+      &__title {
+         font-size: 44px;
+      }
+      &__subtitle {
+         font-size: 32px;
+         margin: 24px 0;
+      }
+      &__text {
+         font-size: 16px;
+         margin-bottom: 24px;
+      }
+      &__image {
+         margin-bottom: 24px;
+      }
+      &__inputs {
+         display: grid;
+         grid-template-columns: 1fr;
+         gap: 8px;
+      }
+      &__footer {
+         margin-top: 12px;
+         gap: 12px;
+         p {
+            font-size: 14px;
+         }
+      }
+   }
+}

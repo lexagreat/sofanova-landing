@@ -1,0 +1,118 @@
+.trusting {
+   padding-top: var(--padding);
+   // .trusting__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media (max-width: $mobile) {
+         gap: 24px;
+      }
+   }
+
+   // .trusting__title
+
+   &__title {
+   }
+
+   // .trusting__main
+
+   &__main {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 8px;
+      }
+   }
+
+   // .trusting__item
+
+   &__item {
+      position: relative;
+      & > img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .trusting__btn
+
+   &__btn {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: $white;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      border-radius: 6px 0 0 0;
+      div.left {
+         &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            border-radius: 0 0 0px 0;
+         }
+         &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #f7f7f7;
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            border-radius: 0 0 6px 0;
+         }
+      }
+      div.right {
+         &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            border-radius: 0 0 0px 0;
+         }
+         &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #f7f7f7;
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            border-radius: 0 0 6px 0;
+         }
+      }
+      a {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         width: 32px;
+         height: 32px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         backdrop-filter: blur(4px);
+         background-color: #f7f7f7;
+         border-radius: 6px;
+      }
+   }
+}
