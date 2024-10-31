@@ -418,7 +418,9 @@ function makeZoomSlider() {
    });
 }
 function stepsAnimation() {
+   if (window.innerWidth <= 992) return;
    function circleAnim() {
+      const btn = document.querySelector(".step-item__btn");
       const spans = document.querySelectorAll(".steps-circle__index");
       const images = document.querySelectorAll(".steps-circle__img");
       const contents = document.querySelectorAll(".step-item");
@@ -484,6 +486,7 @@ function stepsAnimation() {
                contents.forEach((item) => {
                   item.style.translate = `0 calc(-${0} * 100% - (68px * ${0}))`;
                });
+               // btn.style.translate = `0 calc(-${0} * 100% - (68px * ${0}))`;
                contents[0].classList.add("active");
                contents[1].classList.remove("active");
                contents[2].classList.remove("active");
@@ -493,6 +496,7 @@ function stepsAnimation() {
                contents.forEach((item) => {
                   item.style.translate = `0 calc(-${1} * 100% - (68px * ${0}))`;
                });
+               // btn.style.translate = `0 calc(-${1} * 100% - (68px * ${0}))`;
                contents[1].classList.add("active");
                contents[0].classList.remove("active");
                contents[2].classList.remove("active");
@@ -502,15 +506,19 @@ function stepsAnimation() {
                contents.forEach((item) => {
                   item.style.translate = `0 calc(-${2} * 100% - (68px * ${1}))`;
                });
+               // btn.style.translate = `0 calc(-${2} * 100% - (68px * ${1}))`;
                contents[2].classList.add("active");
                contents[0].classList.remove("active");
                contents[1].classList.remove("active");
                contents[3].classList.remove("active");
+               btn.style.opacity = 0;
             }
             if (progress >= 0.65) {
                contents.forEach((item) => {
                   item.style.translate = `0 calc(-${3} * 100% - (68px * ${2}))`;
                });
+               // btn.style.translate = `0 calc(-${3} * 100% - (68px * ${2}))`;
+               btn.style.opacity = 1;
                contents[3].classList.add("active");
                contents[1].classList.remove("active");
                contents[2].classList.remove("active");
