@@ -64,7 +64,8 @@
                            </li>
                         </ul>
                         <div class="hero-form__capcha"></div>
-                        <button class="hero-form__btn btn header-menu__btn">Оставить заявку</button>
+                        <button href="#thanksModal" class="modal__link hero-form__btn btn header-menu__btn">Оставить
+                           заявку</button>
                         <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой
                               конфиденциальности</a></p>
                      </div>
@@ -875,7 +876,7 @@
          </section>
          <section class="form reviews-page__form">
             <div class="container">
-               <div class="form__wrapper">
+               <div class="form__wrapper" id="formSection">
                   <div class="form__images">
                      <div class="form__image">
                         <svg xmlns="http://www.w3.org/2000/svg" width="185" height="72" viewBox="0 0 185 72"
@@ -915,7 +916,8 @@
                            </div>
                            <div class="form-main__footer">
                               <div class="form-main__btn">
-                                 <button type="button" class="btn btn_dark">Вызвать дизайнера</button>
+                                 <button type="button" class="btn btn_dark" id="formBtnToThanks">Заказать образцы на
+                                    дом</button>
                               </div>
                               <div class="form-main__policy caption">
                                  Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
@@ -923,6 +925,16 @@
                            </div>
                         </form>
                      </div>
+                  </div>
+               </div>
+               <div class="form-thanks form__wrapper" id="formThanks">
+                  <div class="form-thanks__main">
+                     <h3 class="form-thanks__title">Спасибо за заявку! </h3>
+                     <p class="form-thanks__text">Ожидайте звонок от нашего менеджера в ближайшее время</p>
+                  </div>
+                  <div class="form-thanks__images">
+                     <img src="img/icons/divan-thanks.svg" alt="" class="divan">
+                     <img src="img/icons/form-thanks-icon.svg" class="mater" alt="">
                   </div>
                </div>
             </div>
@@ -1052,6 +1064,80 @@
                            </div>
                         </div>
                      </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="steps">
+            <div class="container">
+               <div class="steps__wrapper">
+                  <h2 class="production__title">Этапы работы</h2>
+                  <div class="steps__main">
+                     <div class="steps__circle steps-circle">
+                        <div class="border"></div>
+                        <svg width="450" height="450" viewBox="0 0 450 450" fill="none"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <circle cx="225" cy="225" r="225" stroke="#A25AE6" stroke-opacity="" class="fill" />
+                        </svg>
+                        <span class="steps-circle__index index1 active">1</span>
+                        <span class="steps-circle__index index2">2</span>
+                        <span class="steps-circle__index index3">3</span>
+                        <span class="steps-circle__index index4">4</span>
+                        <img src="img/step1.png" alt="" class="steps-circle__img img1 active">
+                        <img src="img/step2.png" alt="" class="steps-circle__img img2">
+                        <img src="img/step3.png" alt="" class="steps-circle__img img3">
+                        <img src="img/step4.png" alt="" class="steps-circle__img img4">
+                     </div>
+                     <ul class="steps__list">
+                        <li class="step-item active">
+                           <div class="step-item__index">
+                              <span>1</span>
+                              <span>этап</span>
+                           </div>
+                           <div class="step-item__main">
+                              <h5 class="step-item__title">Выезд дизайнера с образцами материала</h5>
+                              <p class="step-item__subtitle">Определяемся с цветом, фактурой, износоустойчивостью.</p>
+                           </div>
+                        </li>
+                        <li class="step-item">
+                           <div class="step-item__index">
+                              <span>2</span>
+                              <span>этап</span>
+                           </div>
+                           <div class="step-item__main">
+                              <h5 class="step-item__title">Составляем договор
+                              </h5>
+                              <p class="step-item__subtitle">Сроком от 1 до 10 рабочих дней (зависит от конкретного
+                                 изделия и может быть увеличен в зависимости от объёма) вносите авансовый платёж в
+                                 размере 50% для заказа материал.</p>
+                           </div>
+                        </li>
+                        <li class="step-item">
+                           <div class="step-item__index">
+                              <span>3</span>
+                              <span>этап</span>
+                           </div>
+                           <div class="step-item__main">
+                              <h5 class="step-item__title">Забираем в мастерскую
+                              </h5>
+                              <p class="step-item__subtitle">Наши сотрудники приедут в удобное вам время, разберут
+                                 мебель и доставят в мастерскую.</p>
+                           </div>
+                        </li>
+                        <li class="step-item">
+                           <div class="step-item__index">
+                              <span>4</span>
+                              <span>этап</span>
+                           </div>
+                           <div class="step-item__main">
+                              <h5 class="step-item__title">Выполняем работу и доставляем
+                              </h5>
+                              <p class="step-item__subtitle">Мы делаем все работы и доставляем тщательно упакованное
+                                 изделие, где Вы оплачиваете остаток 50% от стоимости заказа за выполненные работы.</p>
+                           </div>
+                        </li>
+
+                     </ul>
                   </div>
                </div>
             </div>
@@ -1397,7 +1483,7 @@
                   <ul class="trusting__main">
                      <li class="trusting__item">
                         <img src="img/brend-1.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1407,7 +1493,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-2.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1417,7 +1503,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-3.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1427,7 +1513,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-4.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1437,7 +1523,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-5.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1447,7 +1533,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-6.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href>
@@ -1457,7 +1543,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-7.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1467,7 +1553,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-8.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1477,7 +1563,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-9.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1487,7 +1573,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-1.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1497,7 +1583,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-2.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1507,7 +1593,7 @@
                      </li>
                      <li class="trusting__item">
                         <img src="img/brend-3.svg" alt="">
-                        <div class="trusting__btn">
+                        <div class="trusting__btn modal__link" href="trustModal">
                            <div class="left"></div>
                            <div class="right"></div>
                            <a href="#">
@@ -1698,8 +1784,328 @@
             </div>
          </section>
       </main>
+      <div class="modal thanks-modal" id="thanksModal">
+         <div class="modal__content thanks-modal__content">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <div class="thanks-modal__wrapper">
+               <div class="thanks-modal__main">
+                  <h5 class="thanks-modal__title">Спасибо за заявку!</h5>
+                  <div class="thanks-modal__text">Ожидайте звонок от нашего менеджера в ближайшее время.</div>
+               </div>
+               <div class="thanks-modal__image">
+                  <img src="img/icons/divan-thanks.svg" alt="">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal form-modal" id="formModal1">
+         <div class="modal__content form-modal__content" style="background-color: #F6E3FA;">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <h5 class="form-modal__title">Пригласите дизайнера
+               <span>бесплатно</span>
+            </h5>
+            <p class="form-modal__subtitle">Поможем с выбором материала и предложим варианты перетяжки обивки и
+               реставрации мебели на месте.</p>
+            <ul class="form-modal__inputs">
+               <li>
+                  <input type="text" class="input" placeholder="Имя">
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="+7 (999) 999-99-99" data-phone>
+               </li>
+               <li style="grid-column: span 2;">
+                  <input type="text" class="input" placeholder="Комментарий">
+               </li>
+            </ul>
+            <div class="form-modal__footer">
+               <button class="btn form-modal__btn">Пригласить дизайнера</button>
+               <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
+            </div>
+         </div>
+      </div>
+      <div class="modal form-modal" id="formModal2">
+         <div class="modal__content form-modal__content" style="background-color: #F7F2DC;">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <h5 class="form-modal__title">Запишитесь на экскурсию
+               <span>на производство</span>
+            </h5>
+            <ul class="form-modal__inputs">
+               <li>
+                  <input type="text" class="input" placeholder="Имя">
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="+7 (999) 999-99-99" data-phone>
+               </li>
+               <li style="grid-column: span 2;">
+                  <input type="text" class="input" placeholder="Комментарий">
+               </li>
+            </ul>
+            <div class="form-modal__footer">
+               <button class="btn form-modal__btn">Отправить</button>
+               <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
+            </div>
+         </div>
+      </div>
+      <div class="modal form-modal" id="formModal3">
+         <div class="modal__content form-modal__content" style="background-color: #D1E8CB;">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <h5 class="form-modal__title">Заполните заявку
+               <span>и мы рассчитаем стоимость работ</span>
+            </h5>
+            <ul class="form-modal__inputs">
+               <li>
+                  <input type="text" class="input" placeholder="Имя">
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="+7 (999) 999-99-99" data-phone>
+               </li>
+               <li class="file">
+                  <input type="file" id="modal3File">
+                  <label for="modal3File" style="cursor: pointer;">
+                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M8.68299 2.20127C8.74515 2.22566 8.8034 2.26296 8.85363 2.31319L12.187 5.64653C12.3822 5.84179 12.3822 6.15837 12.187 6.35363C11.9917 6.5489 11.6751 6.5489 11.4799 6.35363L9.00006 3.87383V10.6667C9.00006 10.9429 8.7762 11.1667 8.50006 11.1667C8.22392 11.1667 8.00006 10.9429 8.00006 10.6667V3.87387L5.5203 6.35363C5.32504 6.5489 5.00846 6.5489 4.81319 6.35363C4.61793 6.15837 4.61793 5.84179 4.81319 5.64653L8.14383 2.31589C8.15269 2.3069 8.16189 2.29824 8.1714 2.28994C8.21035 2.25589 8.25333 2.2289 8.29866 2.20897C8.36028 2.18182 8.42841 2.16675 8.50006 2.16675M8.50308 2.16676C8.56655 2.16713 8.62722 2.17933 8.68299 2.20127L8.50308 2.16676ZM3.16675 10.8333C3.44289 10.8333 3.66675 11.0571 3.66675 11.3333V12.6666C3.66675 12.8876 3.75455 13.0996 3.91083 13.2558C4.06711 13.4121 4.27907 13.4999 4.50008 13.4999H12.5001C12.7211 13.4999 12.9331 13.4121 13.0893 13.2558C13.2456 13.0996 13.3334 12.8876 13.3334 12.6666V11.3333C13.3334 11.0571 13.5573 10.8333 13.8334 10.8333C14.1096 10.8333 14.3334 11.0571 14.3334 11.3333V12.6666C14.3334 13.1528 14.1403 13.6191 13.7964 13.9629C13.4526 14.3068 12.9863 14.4999 12.5001 14.4999H4.50008C4.01385 14.4999 3.54754 14.3068 3.20372 13.9629C2.8599 13.6191 2.66675 13.1528 2.66675 12.6666V11.3333C2.66675 11.0571 2.89061 10.8333 3.16675 10.8333Z"
+                           fill="black" fill-opacity="0.35" />
+                     </svg>
+                     <span>Прикрепить фото</span>
+                  </label>
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="Комментарий">
+               </li>
+            </ul>
+            <div class="form-modal__footer">
+               <button class="btn form-modal__btn">Отправить</button>
+               <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
+            </div>
+         </div>
+      </div>
+      <div class="modal form-modal" id="formModal4">
+         <div class="modal__content form-modal__content" style="background-color: #BAD9E5;">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <h5 class="form-modal__title">Задайте ваш вопрос
+               <span>и мы свяжемся с вами!</span>
+            </h5>
+            <ul class="form-modal__inputs">
+               <li>
+                  <input type="text" class="input" placeholder="Имя">
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="+7 (999) 999-99-99" data-phone>
+               </li>
+               <li style="grid-column: span 2;">
+                  <input type="text" class="input" placeholder="Вопрос">
+               </li>
+            </ul>
+            <div class="form-modal__footer">
+               <button class="btn form-modal__btn">Отправить</button>
+               <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
+            </div>
+         </div>
+      </div>
+      <div class="modal trust-modal" id="trustModal">
+         <div class="modal__content trust-modal__content">
+            <div class="trust-modal__wrapper">
+               <div class="modal__close">
+                  <img src="img/icons/modal__close.svg" alt="">
+               </div>
+               <div class="trust-modal__info">
+                  <h4>АСМ Мебель</h4>
+                  <p>
+                     Отель премиального уровня с эксклюзивным дизайном, основанном на современном прочтении традиционных
+                     элементов китайской культуры
+                  </p>
+               </div>
+               <div class="trust-modal__image">
+                  <img src="img/trust-modal.png" alt="">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal material-modal" id="materialModal">
+         <div class="modal__content material-modal__content">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <div class="material-modal__wrapper scrollbar-none">
+               <div class="material-modal__header">
+                  <h4 class="material-modal__title">Велюр</h4>
+                  <button class="material-modal__read" id="materModalRead">
+                     Подробнее о ткани
+                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                        <path d="M1 1L7 7L1 13" stroke="black" stroke-opacity="0.85" stroke-width="1.03464" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="material-modal__text collapse" id="materModalReadText">
+                  <p>
+                     Мебельный микровелюр — это новое поколение велюров, которое отличается более коротким ворсом (до 1
+                     мм). Непревзойденная крепость, устойчивость к растяжению и практичность приобретается за счет
+                     особого
+                     типа плетения – в виде микроскопических сот. Микровелюр является самой универсальной и
+                     неприхотливой
+                     тканью для обивки мебели.
+                  </p>
+                  <p>Повседневный уход:</p>
+                  <p>
+                     1) По мере загрязнения обивку можно пылесосить на минимальной мощности со специальной узкой
+                     насадкой
+                     для мебели. Очищать ткань от крошек и шерсти лучше при помощи мягкой щетки (слишком жесткая щетина
+                     может повредить ворс).
+                  </p>
+                  <p>
+                     2) Несложные пятна удаляются влажными салфетками.
+                  </p>
+                  <a href="#freeMaterialModal" class="modal__link">
+                     Заказать образцы бесплатно
+                     <img src="img/icons/arrow-right-up.svg" alt="">
+                  </a>
+               </div>
+               <div class="material-modal__main">
+                  <div class="material-modal__left">
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                  </div>
+                  <div class="material-modal__right">
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                     <div class="material-modal__card">
+                        <div>
+                           <img src="img/mat-modal.png" alt="">
+                        </div>
+                        <span>Atlanta</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal form-modal" id="freeMaterialModal">
+         <div class="modal__content form-modal__content" style="background-color: #F6E3FA;">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <h5 class="form-modal__title">Привезем образцы тканей
+               <span>бесплатно</span>
+            </h5>
+            <p class="form-modal__subtitle">Приедем к вам на дом с понравившимися образцами, чтобы вы могли лично
+               потрогать и посмотреть каждый!</p>
+            <ul class="form-modal__inputs">
+               <li>
+                  <input type="text" class="input" placeholder="Имя">
+               </li>
+               <li>
+                  <input type="text" class="input" placeholder="+7 (999) 999-99-99" data-phone>
+               </li>
+
+            </ul>
+            <div class="form-modal__footer">
+               <button class="btn form-modal__btn">Заказать образцы на дом</button>
+               <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
+            </div>
+         </div>
+      </div>
+      <div class="modal zoom-modal" id="zoomModal">
+         <div class="zoom-modal__content modal__content">
+            <div class="modal__close">
+               <img src="img/icons/modal__close.svg" alt="">
+            </div>
+            <div class="zoom-modal__wrapper scrollbar-none">
+
+               <div style="position: relative; width: 100%; height: 100%;">
+                  <div class="slider__btn prev">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                        <path d="M7 1L1 7L7 13" stroke="black" stroke-opacity="0.85" stroke-width="1.03464" />
+                     </svg>
+                  </div>
+                  <div class="slider__btn next">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                        <path d="M1 1L7 7L1 13" stroke="black" stroke-opacity="0.85" stroke-width="1.03464" />
+                     </svg>
+                  </div>
+                  <div class="swiper main">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="swiper-zoom-container">
+                              <img src="img/zoom-image.png" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="swiper-zoom-container">
+                              <img src="img/zoom-image.png" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="swiper-zoom-container">
+                              <img src="img/zoom-image.png" alt="">
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="swiper thumbs">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <img src="img/zoom-image.png" alt="">
+                     </div>
+                     <div class="swiper-slide">
+                        <img src="img/zoom-image.png" alt="">
+                     </div>
+                     <div class="swiper-slide">
+                        <img src="img/zoom-image.png" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
       @@include('html/footer.html', {})
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="https://unpkg.com/imask"></script>
    <script src="js/app.js"></script>

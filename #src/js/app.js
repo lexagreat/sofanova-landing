@@ -15,6 +15,7 @@
       }
    });
 })();
+gsap.registerPlugin(ScrollTrigger);
 const body = document.body;
 const maskOptions = {
    mask: "+{7} (000) 000-00-00",
@@ -34,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
    // home
    accordion(".faq-item__header", ".faq-item__content");
    initProcessSwiper();
+   materialModalRead();
+   makeZoomSlider();
+   stepsAnimation();
 });
 
 function headerWork() {
@@ -273,4 +277,247 @@ function slideHide(el, duration = 300) {
       el.style["transition"] = "";
       el.style["overflow"] = "";
    }, duration);
+}
+
+// Popup
+const popupLinks = document.querySelectorAll(".modal__link");
+const lockPadding = document.querySelectorAll(".lock-padding");
+const popupCloseIcon = document.querySelectorAll(".modal__close");
+
+let unlock = true;
+
+const timeout = 500;
+
+if (popupLinks.length > 0) {
+   for (let index = 0; index < popupLinks.length; index++) {
+      const popupLink = popupLinks[index];
+      // console.log(popupLink);
+      popupLink.addEventListener("click", function (e) {
+         const popupName = popupLink.getAttribute("href").replace("#", "");
+         const curentPopup = document.getElementById(popupName);
+         popupOpen(curentPopup);
+         e.preventDefault();
+      });
+   }
+}
+
+if (popupCloseIcon.length > 0) {
+   for (let index = 0; index < popupCloseIcon.length; index++) {
+      const el = popupCloseIcon[index];
+      el.addEventListener("click", function (e) {
+         popupClose(el.closest(".modal"));
+         e.preventDefault();
+      });
+   }
+}
+
+function popupOpen(curentPopup) {
+   if (curentPopup && unlock) {
+      const popupActive = document.querySelector(".modal.open");
+      if (popupActive) {
+         popupClose(popupActive, false);
+      } else {
+         bodyLock();
+      }
+      curentPopup.classList.add("open");
+      curentPopup.addEventListener("click", function (e) {
+         if (!e.target.closest(".modal__content")) {
+            popupClose(e.target.closest(".modal"));
+         }
+      });
+   }
+}
+function popupClose(popupActive, doUnlock = true) {
+   if (unlock) {
+      popupActive.classList.remove("open");
+      if (doUnlock) {
+         bodyUnLock();
+      }
+   }
+}
+
+function bodyLock() {
+   const lockPaddingValue =
+      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+
+   if (lockPadding.length > 0) {
+      for (let index = 0; index < lockPadding.length; index++) {
+         const el = lockPadding[index];
+         el.style.paddingRight = lockPaddingValue;
+      }
+   }
+   body.style.paddingRight = lockPaddingValue;
+   body.classList.add("lock");
+
+   unlock = false;
+   setTimeout(function () {
+      unlock = true;
+   }, timeout);
+}
+
+function bodyUnLock() {
+   setTimeout(function () {
+      if (lockPadding.length > 0) {
+         for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = "0px";
+         }
+      }
+      body.style.paddingRight = "0px";
+      body.classList.remove("lock");
+   }, timeout);
+
+   unlock = false;
+   setTimeout(function () {
+      unlock = true;
+   }, timeout);
+}
+
+document.addEventListener("keydown", function (e) {
+   if (e.which === 27) {
+      const popupActive = document.querySelector(".modal.open");
+      popupClose(popupActive);
+   }
+});
+
+document.querySelector("#formBtnToThanks").addEventListener("click", () => {
+   document.querySelector("#formThanks").classList.add("active");
+   document.querySelector("#formSection").classList.add("hidden");
+});
+
+function materialModalRead() {
+   const btn = document.querySelector("#materModalRead");
+   const text = document.querySelector("#materModalReadText");
+   btn.addEventListener("click", () => {
+      if (text.classList.contains("collapsing")) return;
+      if (text.classList.contains("collapse_show")) {
+         slideHide(text);
+         btn.classList.remove("active");
+      } else {
+         slideShow(text);
+         btn.classList.add("active");
+      }
+   });
+}
+
+function makeZoomSlider() {
+   const thumbsSwiper = new Swiper(".zoom-modal .swiper.thumbs", {
+      watchSlidesProgress: true,
+      slidesPerView: "auto",
+   });
+   const swiper = new Swiper(".zoom-modal .swiper.main", {
+      slidesPerView: 1,
+      zoom: true,
+      thumbs: {
+         swiper: thumbsSwiper,
+      },
+      navigation: {
+         prevEl: ".zoom-modal .slider__btn.prev",
+         nextEl: ".zoom-modal .slider__btn.next",
+      },
+   });
+}
+function stepsAnimation() {
+   function circleAnim() {
+      const spans = document.querySelectorAll(".steps-circle__index");
+      const images = document.querySelectorAll(".steps-circle__img");
+      const contents = document.querySelectorAll(".step-item");
+      const fill = document.querySelector(".steps-circle .fill");
+      const circle = document.querySelector(".steps-circle .border");
+      const length = fill.getTotalLength();
+      fill.style.strokeDasharray = length;
+      fill.style.strokeDashoffset = length;
+
+      circle.style.width = fill.getBoundingClientRect().width + 0 + "px";
+      circle.style.height = fill.getBoundingClientRect().width + 0 + "px";
+
+      gsap.to(fill, {
+         scrollTrigger: {
+            trigger: fill, // элемент, который должен запускать анимацию
+            start: "top 50%", // когда верх элемента достигает 80% высоты экрана
+            end: "bottom bottom", // когда низ элемента достигает низа экрана
+            // markers: true, // включить маркеры для визуальной отладки
+            scrub: 1.5,
+            endTrigger: ".steps", // указание родителя для окончания анимации
+         },
+         strokeDashoffset: 0, // Уменьшаем смещение до 0, чтобы показать линию полностью
+         duration: 2, // Продолжительность анимации
+         ease: "power1.inOut", // Тип анимации для плавного эффекта
+         onUpdate: function () {
+            // Проверяем прогресс анимации
+            const progress = this.progress();
+            console.log(progress);
+            if (progress < 0.35 && !spans[0].classList.contains("active")) {
+               spans[0].classList.add("active");
+               images[0].classList.add("active");
+            }
+            if (progress >= 0.35 && !spans[1].classList.contains("active")) {
+               spans[1].classList.add("active");
+               images[1].classList.add("active");
+            }
+            if (progress >= 0.5 && !spans[2].classList.contains("active")) {
+               spans[2].classList.add("active");
+               images[2].classList.add("active");
+            }
+            if (progress >= 0.65 && !spans[3].classList.contains("active")) {
+               spans[3].classList.add("active");
+               images[3].classList.add("active");
+            }
+            if (progress == 0) {
+               spans[0].classList.remove("active");
+               images[0].classList.remove("active");
+            }
+            if (progress < 0.35) {
+               spans[1].classList.remove("active");
+               images[1].classList.remove("active");
+            }
+            if (progress < 0.5) {
+               spans[2].classList.remove("active");
+               images[2].classList.remove("active");
+            }
+            if (progress < 0.65) {
+               spans[3].classList.remove("active");
+               images[3].classList.remove("active");
+            }
+
+            if (progress >= 0 && progress < 35) {
+               contents.forEach((item) => {
+                  item.style.translate = `0 calc(-${0} * 100% - (68px * ${0}))`;
+               });
+               contents[0].classList.add("active");
+               contents[1].classList.remove("active");
+               contents[2].classList.remove("active");
+               contents[3].classList.remove("active");
+            }
+            if (progress >= 0.35 && progress < 0.5) {
+               contents.forEach((item) => {
+                  item.style.translate = `0 calc(-${1} * 100% - (68px * ${0}))`;
+               });
+               contents[1].classList.add("active");
+               contents[0].classList.remove("active");
+               contents[2].classList.remove("active");
+               contents[3].classList.remove("active");
+            }
+            if (progress >= 0.5 && progress < 0.65) {
+               contents.forEach((item) => {
+                  item.style.translate = `0 calc(-${2} * 100% - (68px * ${1}))`;
+               });
+               contents[2].classList.add("active");
+               contents[0].classList.remove("active");
+               contents[1].classList.remove("active");
+               contents[3].classList.remove("active");
+            }
+            if (progress >= 0.65) {
+               contents.forEach((item) => {
+                  item.style.translate = `0 calc(-${3} * 100% - (68px * ${2}))`;
+               });
+               contents[3].classList.add("active");
+               contents[1].classList.remove("active");
+               contents[2].classList.remove("active");
+               contents[0].classList.remove("active");
+            }
+         },
+      });
+   }
+   circleAnim();
 }
