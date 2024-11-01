@@ -1673,6 +1673,10 @@ body.lock {
   display: none;
 }
 
+.hero .btn {
+  background-color: #bad9e5 !important;
+}
+
 .hero__wrapper {
   display: -ms-grid;
   display: grid;
@@ -5453,9 +5457,26 @@ body.lock {
     height: 12px;
   }
 
+  .header__rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .header__rating span {
+    display: block;
+    width: 18px;
+    margin: 0;
+    margin-left: 2px;
+  }
+
   .header__phone {
     height: 32px;
     font-size: 12px;
+    padding: 0 10px;
   }
 
   .header__phone svg,

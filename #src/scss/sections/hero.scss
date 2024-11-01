@@ -4,7 +4,9 @@
    .mobile {
       display: none;
    }
-
+   .btn {
+      background-color: $brandBlue !important;
+   }
    &__wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
