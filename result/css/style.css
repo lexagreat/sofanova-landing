@@ -2206,8 +2206,8 @@ body.lock {
 .calc-chars__main,
 .calc-type__main,
 .calc-materials__main {
-   overflow: auto;
-   height: 312px;
+   /* overflow: auto; */
+   /* height: 312px; */
 }
 
 .calc-chars__card {
@@ -4819,7 +4819,7 @@ body.lock {
    .calc-chars__main,
    .calc-type__main,
    .calc-materials__main {
-      height: 392px;
+      /* height: 392px; */
    }
 
    .calc-type {
@@ -5796,7 +5796,7 @@ body.lock {
    .calc-chars__main,
    .calc-type__main,
    .calc-materials__main {
-      height: 516px;
+      /* height: 516px; */
    }
 
    .calc-materials__grid {

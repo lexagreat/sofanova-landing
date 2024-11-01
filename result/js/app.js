@@ -58,7 +58,7 @@ function homeViewCalc() {
 
    if (sliderWrapper) {
       navigation();
-      // setHeight();
+      setHeight();
       function paginationWork() {
          pagination.forEach((item) => {
             item.classList.remove("active");
@@ -100,14 +100,14 @@ function homeViewCalc() {
       }
       function slideNext() {
          activeSlideIndex++;
-         // setHeight();
+         setHeight();
          sliderWrapper.style.transform = `translateX(-${
             activeSlideIndex * 100
          }%)`;
       }
       function slidePrev() {
          activeSlideIndex--;
-         // setHeight();
+         setHeight();
          sliderWrapper.style.transform = `translateX(-${
             activeSlideIndex * 100
          }%)`;
