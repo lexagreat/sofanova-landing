@@ -254,6 +254,7 @@ svg path {
   font-size: 16px;
   font-weight: 500;
   line-height: 115%;
+  color: #000000d9;
 }
 
 .btn_dark {
@@ -296,7 +297,7 @@ svg path {
   padding-right: 18px;
   border-radius: 32px;
   color: rgba(0, 0, 0, 0.85);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 140%;
 }
 
@@ -3172,9 +3173,6 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   gap: 20px;
 }
 
@@ -3331,7 +3329,13 @@ body.lock {
 }
 
 .pillows-form__radios input:checked + label {
-  border-color: black;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+
+.pillows-form__radios input:checked + label svg path {
+  stroke: #fff;
 }
 
 .pillows-form__inputs {
@@ -3372,7 +3376,7 @@ body.lock {
 }
 
 .pillows-form__btn {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.85);
   color: #fff;
 }
 
@@ -4637,6 +4641,7 @@ body.lock {
     display: flex;
     width: 260px;
     margin: 0 auto;
+    background-color: #bad9e5;
   }
 
   .hero__main {
@@ -4712,6 +4717,9 @@ body.lock {
   }
 
   .features__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     gap: 20px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

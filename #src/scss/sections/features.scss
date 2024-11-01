@@ -32,7 +32,6 @@
       color: $blackPrimary;
       line-height: calc(30 / 28);
    }
-
    // .features__text
 
    &__text {
@@ -50,6 +49,7 @@
          gap: 24px;
       }
       &__content {
+         display: flex;
          gap: 20px;
          flex-direction: column;
       }

@@ -448,7 +448,6 @@ function stepsAnimation() {
          onUpdate: function () {
             // Проверяем прогресс анимации
             const progress = this.progress();
-            console.log(progress);
             if (progress < 0.35 && !spans[0].classList.contains("active")) {
                spans[0].classList.add("active");
                images[0].classList.add("active");

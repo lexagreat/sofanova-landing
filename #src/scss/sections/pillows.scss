@@ -160,7 +160,12 @@
          cursor: pointer;
       }
       input:checked + label {
-         border-color: black;
+         background-color: $blackPrimary;
+         border-color: $blackPrimary;
+         color: $white;
+         svg path {
+            stroke: $white;
+         }
       }
    }
 
@@ -195,7 +200,7 @@
       }
    }
    &__btn {
-      background-color: $black;
+      background-color: $blackPrimary;
       color: $white;
    }
    @media (max-width: $tablet) {
