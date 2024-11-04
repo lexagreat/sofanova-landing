@@ -6694,3 +6694,35 @@ body.lock {
    .examples-item__list li {
    }
 }
+.production__btn:hover,
+.examples__btn:hover,
+.step-item__btn:hover {
+   background-color: #000000d9;
+}
+.header__order:hover,
+.header__phone:hover,
+.header__phone:hover {
+   background-color: #b8d4b0;
+}
+.slider__btn {
+   transition: 0.4s;
+}
+.slider__btn svg path {
+   transition: 0.4s;
+}
+.slider__btn:hover {
+   background-color: #848382;
+}
+.slider__btn:hover svg path {
+   stroke: white;
+}
+.materials-section__btn,
+.home-faq__footer .btn,
+.exampels-more__btn {
+   border-color: #848382;
+}
+.materials-section__btn:hover,
+.home-faq__footer .btn:hover,
+.exampels-more__btn:hover {
+   border-color: #000000d9;
+}
