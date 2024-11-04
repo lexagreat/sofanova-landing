@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
    materialModalRead();
    makeZoomSlider();
    stepsAnimation();
+   initExamplesSwiper();
 });
 
 function headerWork() {
@@ -134,6 +135,18 @@ function initReviewsSwiper() {
          650: {
             slidesPerView: 2,
          },
+      },
+   });
+}
+function initExamplesSwiper() {
+   const swiper = new Swiper(".examples .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 40,
+      centeredSlides: true,
+      initialSlide: 1,
+      navigation: {
+         prevEl: ".examples .slider__btn.prev",
+         nextEl: ".examples .slider__btn.next",
       },
    });
 }
