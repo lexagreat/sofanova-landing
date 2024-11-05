@@ -606,6 +606,7 @@ svg path {
    font-size: 20px;
    font-weight: 600;
    letter-spacing: -0.04em;
+   flex: 0 0 18px;
 }
 
 .header__schedule {
@@ -4589,7 +4590,7 @@ body.lock {
    }
 
    .header__btns {
-      gap: 6px;
+      gap: 4px;
    }
 
    .header__phone {
