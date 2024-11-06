@@ -6811,4 +6811,9 @@ body.lock {
    .header__wrapper {
       gap: 4px;
    }
+   .header__rating svg,
+   .header__rating img {
+      width: 53px;
+      height: 18px;
+   }
 }
