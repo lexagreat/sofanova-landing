@@ -6801,3 +6801,14 @@ body.lock {
 .exampels-more__btn:hover {
    border-color: #000000d9;
 }
+@media (max-width: 450px) {
+   .header__logo {
+      width: 129px;
+      -webkit-box-flex: 0;
+      -ms-flex: 1 1 129px;
+      flex: 1 1 129px;
+   }
+   .header__wrapper {
+      gap: 4px;
+   }
+}
