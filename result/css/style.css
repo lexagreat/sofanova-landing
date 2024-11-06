@@ -4581,7 +4581,7 @@ body.lock {
 
    .header__rating img,
    .header__rating svg {
-      width: 17px;
+      width: 68px;
       height: 17px;
    }
 
@@ -5485,7 +5485,7 @@ body.lock {
 
    .header__rating svg,
    .header__rating img {
-      width: 12px;
+      width: 44px;
       height: 12px;
    }
 
@@ -5503,6 +5503,7 @@ body.lock {
       width: 18px;
       margin: 0;
       margin-left: 2px;
+      margin-right: 2px;
    }
 
    .header__phone {
