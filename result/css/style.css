@@ -1572,7 +1572,6 @@ body.lock {
 
 .material-modal__card div {
    border-radius: 8px;
-   overflow: hidden;
 }
 
 .material-modal__card div img {

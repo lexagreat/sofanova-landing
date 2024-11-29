@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
    makeZoomSlider();
    stepsAnimation();
    initExamplesSwiper();
+   makeMaterialZoom();
 });
 
 function headerWork() {
@@ -540,4 +541,11 @@ function stepsAnimation() {
       });
    }
    circleAnim();
+}
+
+function makeMaterialZoom() {
+   const swiper = new Swiper(".material-modal__card .swiper", {
+      zoom: true,
+      slidesPerView: 1,
+   });
 }
